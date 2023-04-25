@@ -34816,33 +34816,38 @@ const Body = ()=>{
         getRestaurants(); //called after rendering has happened
     }, []); //called only once throughout after 1st render
     async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001&page_type=DESKTOP_WEB_LISTING");
-        const json = await data.json();
-        console.log(json);
-        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+        try {
+            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001&page_type=DESKTOP_WEB_LISTING");
+            const json = await data.json();
+            console.log(json);
+            setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+            setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+        } catch (error) {
+            console.log(error);
+        }
     }
     const isOnline = (0, _useOnlineDefault.default)();
     if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: "Offline please check your internet connection"
     }, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 35,
+        lineNumber: 39,
         columnNumber: 12
     }, undefined);
     console.log("render");
     //not render component early return
     // if(filteredRestaurants?.length===0)
     //     return <h1>No Restaurant matched your filter</h1>;
+    if (!allRestaurants) return null;
     return allRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 41,
+        lineNumber: 46,
         columnNumber: 40
     }, undefined) : filteredRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: "No Restaurant matched your filter"
     }, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 41,
+        lineNumber: 46,
         columnNumber: 90
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -34858,7 +34863,7 @@ const Body = ()=>{
                         value: searchText
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 43,
+                        lineNumber: 48,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34871,7 +34876,7 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 47,
+                        lineNumber: 52,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34884,7 +34889,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 56,
+                        lineNumber: 61,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34897,13 +34902,13 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 62,
+                        lineNumber: 67,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 42,
+                lineNumber: 47,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34917,17 +34922,17 @@ const Body = ()=>{
                             ...restaurant.data
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 75,
+                            lineNumber: 80,
                             columnNumber: 29
                         }, undefined)
                     }, restaurant.data.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 74,
+                        lineNumber: 79,
                         columnNumber: 45
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 70,
+                lineNumber: 75,
                 columnNumber: 13
             }, undefined)
         ]

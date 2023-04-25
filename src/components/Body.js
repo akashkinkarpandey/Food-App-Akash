@@ -21,6 +21,7 @@ const Body = () => {
         getRestaurants();//called after rendering has happened
     },[]);//called only once throughout after 1st render
     async function getRestaurants(){
+        try{
         const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001&page_type=DESKTOP_WEB_LISTING")
         const json=await data.json();
         console.log(json);
@@ -28,6 +29,10 @@ const Body = () => {
         (json?.data?.cards[2]?.data?.data?.cards);
         setFilteredRestaurants
         (json?.data?.cards[2]?.data?.data?.cards);
+        }catch(error)
+        {
+            console.log(error)
+        }
     }
     const isOnline=useOnline();
     if(!isOnline)
@@ -38,6 +43,7 @@ const Body = () => {
     //not render component early return
     // if(filteredRestaurants?.length===0)
     //     return <h1>No Restaurant matched your filter</h1>;
+    if (!allRestaurants) return null;
     return (allRestaurants.length===0)? <Shimmer/>:(filteredRestaurants?.length===0)?
      <h1>No Restaurant matched your filter</h1>:(
         <>
@@ -73,7 +79,7 @@ const Body = () => {
                     email:e.target.value
                 })}}></input>
             </div>
-            
+
             <div className="restaurant-list flex flex-wrap" data-testid="res-list">
                 {
                     // both are same below
