@@ -96,3 +96,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter}/>);
+
+
+// git remote add origin https://github.com/akashkinkarpandey/Food-App-Akash.git
+// git branch -M main
+// git push -u origin main

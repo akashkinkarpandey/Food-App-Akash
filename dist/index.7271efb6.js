@@ -3110,7 +3110,9 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     fileName: "src/App.js",
     lineNumber: 78,
     columnNumber: 13
-}, undefined));
+}, undefined)); // git remote add origin https://github.com/akashkinkarpandey/Food-App-Akash.git
+ // git branch -M main
+ // git push -u origin main
 var _c, _c1, _c2;
 $RefreshReg$(_c, "Instamart");
 $RefreshReg$(_c1, "About");
@@ -34915,17 +34917,17 @@ const Body = ()=>{
                             ...restaurant.data
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 74,
+                            lineNumber: 75,
                             columnNumber: 29
                         }, undefined)
                     }, restaurant.data.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 45
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 69,
+                lineNumber: 70,
                 columnNumber: 13
             }, undefined)
         ]
@@ -37380,8 +37382,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var process = require("15ea754dfec683bf");
 var global = arguments[3];
+var process = require("15ea754dfec683bf");
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({

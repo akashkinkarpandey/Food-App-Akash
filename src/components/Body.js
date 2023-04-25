@@ -73,6 +73,7 @@ const Body = () => {
                     email:e.target.value
                 })}}></input>
             </div>
+            
             <div className="restaurant-list flex flex-wrap" data-testid="res-list">
                 {
                     // both are same below
