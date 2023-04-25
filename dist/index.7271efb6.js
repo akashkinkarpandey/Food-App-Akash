@@ -37289,11 +37289,15 @@ const useRestaurant = (id)=>{
         getRestaurantInfo();
     }, []);
     async function getRestaurantInfo() {
-        const data = await fetch((0, _config.FETCH_MENU_URL) + id);
-        const json = await data.json();
-        // console.log(json?.data?.cards[0]?.card?.card);
-        console.log(json?.data);
-        setRestaurant(json?.data);
+        try {
+            const data = await fetch((0, _config.FETCH_MENU_URL) + id);
+            const json = await data.json();
+            // console.log(json?.data?.cards[0]?.card?.card);
+            console.log(json?.data);
+            setRestaurant(json?.data);
+        } catch (error) {
+            console.log(error);
+        }
     }
     return restaurant;
 };

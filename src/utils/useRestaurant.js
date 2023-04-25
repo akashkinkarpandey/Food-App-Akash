@@ -8,11 +8,16 @@ const useRestaurant=(id)=>{
 
     async function getRestaurantInfo()
     {
+        try{
         const data=await fetch(FETCH_MENU_URL+id);
         const json=await data.json()
         // console.log(json?.data?.cards[0]?.card?.card);
         console.log(json?.data);
         setRestaurant(json?.data);
+        }catch(error)
+        {
+            console.log(error)
+        }
     }
     return restaurant;
 }
