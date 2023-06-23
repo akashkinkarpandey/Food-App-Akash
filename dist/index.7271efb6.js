@@ -2970,8 +2970,8 @@ _c1 = About;
 const AppLayout = ()=>{
     _s();
     const [user, setUser] = (0, _react.useState)({
-        name: "Namaste React",
-        email: "hurrah@gmail.com"
+        name: "Akash Kinkar Pandey-",
+        email: "akashkinkarpandey@gmail.com"
     });
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRedux.Provider), {
         store: (0, _storeDefault.default),
@@ -3010,7 +3010,7 @@ const AppLayout = ()=>{
         columnNumber: 10
     }, undefined);
 };
-_s(AppLayout, "EssK6iYhF4udJV/HK9nzjIZQRMg=");
+_s(AppLayout, "ACsto9jvNJsnPBfMjS9FlNZN+AQ=");
 _c2 = AppLayout;
 const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
@@ -37391,8 +37391,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var global = arguments[3];
 var process = require("15ea754dfec683bf");
+var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({

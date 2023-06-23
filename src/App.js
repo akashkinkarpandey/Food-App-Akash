@@ -25,8 +25,8 @@ import store from "./utils/store";
 import Cart from "./components/Cart"
 const AppLayout = () => {
   const [user,setUser]=useState({
-    name:"Namaste React",
-    email:"hurrah@gmail.com",
+    name:"Akash Kinkar Pandey-",
+    email:"akashkinkarpandey@gmail.com",
   })
   return (
     <Provider store={store}>
